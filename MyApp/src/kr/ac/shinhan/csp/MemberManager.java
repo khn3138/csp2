@@ -21,8 +21,8 @@ public class MemberManager {
 	public static Member getMember(String key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
-		//long lkey = Long.parseLong(key);
-		//Member m = pm.getObjectById(Member.class, lkey);
+		// long lkey = Long.parseLong(key);
+		// Member m = pm.getObjectById(Member.class, lkey);
 		Member m = pm.getObjectById(Member.class, key);
 		return m;
 	}
@@ -56,19 +56,21 @@ public class MemberManager {
 		return memberList;
 	}
 
-	/*
-	 * public static void updateMember(Member newMember){ PersistenceManager pm
-	 * = JDOHelper.getPersistenceManagerFactory("transactions-optional").
-	 * getPersistenceManager(); Member m =
-	 * MemberManager.getMember(newMember.getId()+"");
-	 * m.setName(newMember.getName()); m.setHakid(newMember.getHakid());
-	 * m.setPhoneNum(newMember.getPhoneNum()); m.setMail(newMember.getMail());
-	 * m.setLeader(newMember.getLeader()); m.setKkoId(newMember.getKkoId());
-	 * m.setGitId(newMember.getGitId());
-	 * 
-	 * 
-	 * 
-	 * pm.close(); }
-	 */
+	public static Member updateMember(Member newMember) {	//public static void updateMember(Member newMember)  
+		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
+				"transactions-optional").getPersistenceManager();
+		Member m = MemberManager.getMember(newMember.getId() + "");
+		m.setName(newMember.getName());
+		m.setHakid(newMember.getHakid());
+		m.setPhoneNum(newMember.getPhoneNum());
+		m.setMail(newMember.getMail());
+		m.setLeader(newMember.getLeader());
+		m.setKkoId(newMember.getKkoId());
+		m.setGitId(newMember.getGitId());
+
+		pm.close();
+		
+		return newMember;//return°ª¾øÀ½
+	}
 
 }
