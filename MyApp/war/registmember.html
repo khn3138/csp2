@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>팀 멤버 등록</h1>
+	<table>
+		<tr>
+			<form method="post" action="/AddMemberServlet">
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>학번</td>
+					<td><input type="text" name="hakId"></td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td><input type="text" name="phoneNum"></td>
+				</tr>
+				<tr>
+					<td>메일주소</td>
+					<td><input type="text" name="mail"></td>
+				</tr>
+				<tr>
+					<td>카카오톡 아이디</td>
+					<td><input type="text" name="kkoId"></td>
+				</tr>
+				<tr>
+					<td>팀장 여부</td>
+					<td><input type="checkbox" name="cap"></td>
+				</tr>
+				<tr>
+					<td>GitHub ID</td>
+					<td><input type="text" name="gitId"></td>
+				</tr>
+
+
+				<tr>
+					<td><input type="submit" value="쿼리 전송"></td>
+
+				</tr>
+
+
+			</form>
+		</tr>
+
+
+	</table>
+	<tr>
+		<td><a href="index.html">처음으로</a></td>
+	</tr>
+
+</body>
+</html>

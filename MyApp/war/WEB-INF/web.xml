@@ -5,12 +5,12 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>MyApp</servlet-name>
-		<servlet-class>kr.ac.shinhan.csp.MyAppServlet</servlet-class>
+		<servlet-name>RegistMember</servlet-name>
+		<servlet-class>kr.ac.shinhan.csp.RegistMemberServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>MyApp</servlet-name>
-		<url-pattern>/myapp</url-pattern>
+		<servlet-name>RegistMember</servlet-name>
+		<url-pattern>/registmember</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>
