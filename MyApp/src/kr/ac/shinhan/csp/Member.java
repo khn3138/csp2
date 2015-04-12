@@ -24,28 +24,30 @@ public class Member {
 	@Persistent
 	private String kkoId;
 	@Persistent
-	private Boolean cap;
+	private String leader;
+
+		
 	
-	public Boolean getCap() {
-		return cap;
+	public String getLeader() {
+		return leader;
 	}
 
-	public void setCap(Boolean cap) {
-		this.cap = cap;
+	public void setLeader(String leader) {
+		this.leader = leader;
 	}
 
 	@Persistent
 	private String gitId;
 	
 
-	public Member(String name, String hakid, String phoneNum, String mail, String kkoId, Boolean cap, String gitId) {
+	public Member(String name, String hakid, String phoneNum, String mail, String kkoId, String leader, String gitId) {
 		super();
 		this.name = name;
 		this.hakid = hakid;
 		this.phoneNum = phoneNum;
 		this.mail = mail;
 		this.kkoId = kkoId;
-		this.cap = cap;
+		this.leader = leader;
 		this.gitId = gitId;
 	}
 

@@ -1,25 +1,39 @@
 package kr.ac.shinhan.csp;
 
 import java.io.IOException;
+
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
 public class RegistMemberServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+
+		String name = req.getParameter("name");
+		String hakId = req.getParameter("hakId");
+		String phoneNum = req.getParameter("phoneNum");
+		String mail = req.getParameter("mail");
+		String kkoId = req.getParameter("kkoId");
+		String gitId = req.getParameter("gitId");
+		String leader;
 		
+		if(req.getParameter("leader") == null)
+			leader = "∆¿ø¯";
+		else
+			leader = "∆¿¿Â";
 		
-		/*
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/plain");
-		//resp.getWriter().println("Hello, world");
 		
-		resp.getWriter().println("<html><body>");
-		resp.getWriter().println("called MyAppServlet.doGet() </br>");
-		resp.getWriter().println("¿Ã∏ß : " + req.getParameter("name") + "</br>");
-		resp.getWriter().println("¡÷πŒπ¯»£ : " + req.getParameter("id") + "</br>");
-		resp.getWriter().println("</html></body>");
-		*/
+		Member m = MemberManager.addMember(name, hakId, phoneNum, mail, kkoId, leader, gitId );
 		
+		resp.getWriter().println("<html>");
+		resp.getWriter().println("<body>");
+		resp.getWriter().println("¿Ã∏ß : "+m.getName() +"<br>");
+		resp.getWriter().println("¡÷πŒπ¯»£ : "+m.getHakid() +"<br>");
+		resp.getWriter().println("∞¥√º ≈∞ : "+m.getId() +"<br>");
+		
+		resp.getWriter().println("</body>");
+		resp.getWriter().println("</html>");
 	}
 }

@@ -8,10 +8,10 @@ import javax.jdo.Query;
 
 public class MemberManager {
 	
-	public static Member addMember(String name, String hakid, String phoneNum, String mail, String kkoId, Boolean cap, String gitId)
+	public static Member addMember(String name, String hakid, String phoneNum, String mail, String kkoId, String leader, String gitId)
 	{
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
-		Member m = new Member(name,hakid, phoneNum, mail, kkoId, cap, gitId);
+		Member m = new Member(name,hakid, phoneNum, mail, kkoId, leader, gitId);
 		pm.makePersistent(m);
 		
 		return m;
@@ -39,6 +39,7 @@ public class MemberManager {
 		qry.setFilter("name == nameParam");
 		qry.declareParameters("String nameParam");
 		
+		@SuppressWarnings("unchecked")//오류시삭제
 		List<Member> memberList = (List<Member>) qry.execute(name);
 		
 		return memberList;
@@ -48,6 +49,7 @@ public class MemberManager {
 	{
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 		Query qry = pm.newQuery(Member.class);
+		@SuppressWarnings("unchecked")//오류시 삭제 
 		List<Member> memberList = (List<Member>) qry.execute();
 
 		return memberList;
