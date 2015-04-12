@@ -11,28 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberInfoServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		/*
-		 * resp.getWriter().println("<HTML>");
-		 * resp.getWriter().println("<body>");
-		 * resp.getWriter().println("<h1>dd</h1>");
-		 * resp.getWriter().println("</body>");
-		 * resp.getWriter().println("</HTML>");
-		 */
-
+	
 		List<Member> memberList = MemberManager.getAllMembers();
 
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/plain");
 
 		resp.getWriter().println("<html>");
-		resp.getWriter().println("<body><table>");
-
-		resp.getWriter().println("<tr>");
-		resp.getWriter().println("<td>이름</td> <td>학번</td><td>전화번호</td>");
-		resp.getWriter().println("<td>메일</td> <td>카톡</td><td>팀장여부</td>");
-		resp.getWriter().println("<td>Github ID</td> <td>삭제?</td>");
+		//resp.getWriter().println("<body><table border = 1 align='center' bordercolor='gray' >");
+		resp.getWriter().println("<body><table border = 1  bordercolor='gray' >");
+		resp.getWriter().println("<tr bgcolor='gray'>");
+		resp.getWriter().println("<td>Name</td> <td>Num</td><td>P.Num</td>");
+		resp.getWriter().println("<td>E-mail</td> <td>Kakao ID</td><td>Leader Check</td>");
+		resp.getWriter().println("<td>Github ID</td> <td>...</td>");
 		resp.getWriter().println("</tr>");
-
+		
 		for (Member m : memberList) {
 			resp.getWriter().println("<tr>");
 			resp.getWriter().println("<td>" + m.getName() + "</td>");
@@ -42,12 +35,16 @@ public class MemberInfoServlet extends HttpServlet {
 			resp.getWriter().println("<td> " + m.getKkoId() + "</td>");
 			resp.getWriter().println("<td> " + m.getLeader() + "</td>");
 			resp.getWriter().println("<td> " + m.getGitId() + "</td>");
-			resp.getWriter().println("<td>삭제</td>");
+			
+			resp.getWriter().println("<td><a href='/deletemember?key=" + m.getId() + "'>delete</a></td>");//<a href='/deletemember'>delete</a>
+			
 			resp.getWriter().println("</tr>");
 
 		}
-
+		
 		resp.getWriter().println("</table>");
+		
+		resp.getWriter().println("<h3><a href='index.html'>Home</a></h3>");
 		resp.getWriter().println("</body>");
 		resp.getWriter().println("</html>");
 

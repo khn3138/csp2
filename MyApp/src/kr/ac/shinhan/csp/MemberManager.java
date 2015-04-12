@@ -21,8 +21,9 @@ public class MemberManager {
 	public static Member getMember(String key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
+		//long lkey = Long.parseLong(key);
+		//Member m = pm.getObjectById(Member.class, lkey);
 		Member m = pm.getObjectById(Member.class, key);
-
 		return m;
 	}
 

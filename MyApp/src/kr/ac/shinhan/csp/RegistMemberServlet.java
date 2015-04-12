@@ -31,15 +31,18 @@ public class RegistMemberServlet extends HttpServlet {
 
 		resp.getWriter().println("<html>");
 		resp.getWriter().println("<body><table>");
-		resp.getWriter().println("<tr><td>이름  </td><td>: " + m.getName() + "</td></tr>");
-		resp.getWriter().println("<tr><td>학번  </td><td>: " + m.getHakid() + "</td></tr>");
-		resp.getWriter().println("<tr><td>전화번호  </td><td>: " + m.getPhoneNum() + "</td></tr>");
-		resp.getWriter().println("<tr><td>메일주소  </td><td>: " + m.getMail() + "</td></tr>");
-		resp.getWriter().println("<tr><td>카카오 아이디  </td><td>: " + m.getKkoId() + "</td></tr>");
-		resp.getWriter().println("<tr><td>팀장여부  </td><td>: " + m.getLeader() + "</td></tr>");
-		resp.getWriter().println("<tr><td>GitHub 아이디  </td><td>: " + m.getGitId() + "</td></tr>");
-		resp.getWriter().println("</table></body>");
-		resp.getWriter().println("</html>");
+		resp.getWriter().println("<tr><td>Name</td><td>: " + m.getName() + "</td></tr>");
+		resp.getWriter().println("<tr><td>Number</td><td>: " + m.getHakid() + "</td></tr>");
+		resp.getWriter().println("<tr><td>Phone Number</td><td>: " + m.getPhoneNum() + "</td></tr>");
+		resp.getWriter().println("<tr><td>E-Mail</td><td>: " + m.getMail() + "</td></tr>");
+		resp.getWriter().println("<tr><td>Kakao ID</td><td>: " + m.getKkoId() + "</td></tr>");
+		resp.getWriter().println("<tr><td>Leader Check</td><td>: " + m.getLeader() + "</td></tr>");
+		resp.getWriter().println("<tr><td>GitHub ID</td><td>: " + m.getGitId() + "</td></tr>");
+		
+		
+		resp.getWriter().println("</table>");
+		resp.getWriter().println("<h4> <a href='/memberinfo'>MemberList</a> </h4>");
+		resp.getWriter().println("</body></html>");
 
 	}
 }

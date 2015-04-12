@@ -95,12 +95,13 @@ public class Member {
 		this.gitId = gitId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
+
+	
 
 	public Long getId() {
 		return id;
 	}
+	
 
 }
