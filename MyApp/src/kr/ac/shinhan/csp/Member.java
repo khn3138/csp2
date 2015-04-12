@@ -11,8 +11,7 @@ public class Member {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long id;
-	
-	
+
 	@Persistent
 	private String name;
 	@Persistent
@@ -25,22 +24,11 @@ public class Member {
 	private String kkoId;
 	@Persistent
 	private String leader;
-
-		
-	
-	public String getLeader() {
-		return leader;
-	}
-
-	public void setLeader(String leader) {
-		this.leader = leader;
-	}
-
 	@Persistent
 	private String gitId;
-	
 
-	public Member(String name, String hakid, String phoneNum, String mail, String kkoId, String leader, String gitId) {
+	public Member(String name, String hakid, String phoneNum, String mail,
+			String kkoId, String leader, String gitId) {
 		super();
 		this.name = name;
 		this.hakid = hakid;
@@ -51,6 +39,14 @@ public class Member {
 		this.gitId = gitId;
 	}
 
+	public String getLeader() {
+		return leader;
+	}
+
+	public void setLeader(String leader) {
+		this.leader = leader;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -58,7 +54,6 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public String getHakid() {
 		return hakid;
@@ -107,6 +102,5 @@ public class Member {
 	public Long getId() {
 		return id;
 	}
-	
-	
+
 }

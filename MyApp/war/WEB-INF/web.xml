@@ -12,7 +12,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>RegistMember</servlet-name>
 		<url-pattern>/registmember</url-pattern>
 	</servlet-mapping>
-
 	
 	
 	
@@ -25,6 +24,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/memberinfo</url-pattern>
 	</servlet-mapping>
 
+	
+	<servlet>
+		<servlet-name>MemberInfoTest</servlet-name>
+		<servlet-class>kr.ac.shinhan.csp.MemberInfoTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MemberInfoTest</servlet-name>
+		<url-pattern>/memberinfotest</url-pattern>
+	</servlet-mapping>
 
 
 
