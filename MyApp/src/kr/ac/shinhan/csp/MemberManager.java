@@ -18,7 +18,7 @@ public class MemberManager {
 		return m;
 	}
 
-	public static Member getMember(String key) {
+	public static Member getMember(Long key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
 		// long lkey = Long.parseLong(key);
@@ -27,7 +27,7 @@ public class MemberManager {
 		return m;
 	}
 
-	public static void deleteMember(String key) {
+	public static void deleteMember(Long key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
 		Member m = MemberManager.getMember(key);
@@ -59,7 +59,7 @@ public class MemberManager {
 	public static Member updateMember(Member newMember) {	//public static void updateMember(Member newMember)  
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
-		Member m = MemberManager.getMember(newMember.getId() + "");
+		Member m = MemberManager.getMember(newMember.getId() );
 		m.setName(newMember.getName());
 		m.setHakid(newMember.getHakid());
 		m.setPhoneNum(newMember.getPhoneNum());

@@ -12,8 +12,8 @@ public class DeleteMemberServlet extends HttpServlet {
 
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/plain");
+		long key  = Long.parseLong(req.getParameter("key")); 
 		
-		String key = req.getParameter("key");
 
 		MemberManager.deleteMember(key);
 		//MemberManager.addMember(name, hakId, phoneNum, mail, kkoId, leader,gitId );

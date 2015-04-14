@@ -12,8 +12,7 @@ public class UpdateMemberServlet extends HttpServlet {
 
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/plain");
-
-		String key = req.getParameter("key");
+		//long key  = Long.parseLong(req.getParameter("key"));
 		
 		resp.getWriter().println("<html><body>");
 		
