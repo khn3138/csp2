@@ -18,20 +18,22 @@ public class MemberManager {
 		return m;
 	}
 
-	public static Member getMember(Long key) {
+	public static Member getMember(String key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
-		// long lkey = Long.parseLong(key);
-		// Member m = pm.getObjectById(Member.class, lkey);
-		Member m = pm.getObjectById(Member.class, key);
+		Long lkey = Long.parseLong(key);
+		Member m = pm.getObjectById(Member.class, lkey);
+		//Member m = pm.getObjectById(Member.class, key);
 		return m;
 	}
 
-	public static void deleteMember(Long key) {
+	public static void deleteMember(String key) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
-		Member m = MemberManager.getMember(key);
+		Long lkey = Long.parseLong(key);
+		Member m = pm.getObjectById(Member.class, lkey);
 		pm.deletePersistent(m);
+		pm.close();
 	}
 
 	public static List<Member> getMemberByName(String name) {
@@ -56,10 +58,14 @@ public class MemberManager {
 		return memberList;
 	}
 
+	
+	
 	public static Member updateMember(Member newMember) {	//public static void updateMember(Member newMember)  
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
-		Member m = MemberManager.getMember(newMember.getId() );
+		
+		Member m = pm.getObjectById(Member.class, newMember);
+		
 		m.setName(newMember.getName());
 		m.setHakid(newMember.getHakid());
 		m.setPhoneNum(newMember.getPhoneNum());

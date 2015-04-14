@@ -12,10 +12,10 @@ public class DeleteMemberServlet extends HttpServlet {
 
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/plain");
-		long key  = Long.parseLong(req.getParameter("key")); 
+		 
 		
 
-		MemberManager.deleteMember(key);
+		MemberManager.deleteMember(req.getParameter("key"));
 		//MemberManager.addMember(name, hakId, phoneNum, mail, kkoId, leader,gitId );
 
 		resp.getWriter().println("<html><body>");
