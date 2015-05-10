@@ -29,8 +29,9 @@ public class MemberInfoServlet extends HttpServlet {
 		for (Member m : memberList) {
 			resp.getWriter().println("<tr>");
 			//resp.getWriter().println("<td>" + m.getName() + "</td>");
-			resp.getWriter().println("<td><a href='/updatemember?key=" + m.getId() + "'>" + m.getName() + "</a></td>");
-			resp.getWriter().println("<td> " + m.getHakid() + "</td>");
+			resp.getWriter().println("<td><a href=/updateinput?key=" + m.getId() + ">" + m.getName() + "</a></td>");
+			//resp.getWriter().println("<td><a href='updatemember.html?key=" + m.getId() + "'>" + m.getName() + "</a></td>");
+			resp.getWriter().println("<td> " + m.getHakId() + "</td>");
 			resp.getWriter().println("<td> " + m.getPhoneNum() + "</td>");
 			resp.getWriter().println("<td> " + m.getMail() + "</td>");
 			resp.getWriter().println("<td> " + m.getKkoId() + "</td>");

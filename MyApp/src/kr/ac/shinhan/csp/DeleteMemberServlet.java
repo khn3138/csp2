@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("serial")
 public class DeleteMemberServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
@@ -14,7 +15,6 @@ public class DeleteMemberServlet extends HttpServlet {
 		resp.setContentType("text/plain");
 		 
 		
-
 		MemberManager.deleteMember(req.getParameter("key"));
 		//MemberManager.addMember(name, hakId, phoneNum, mail, kkoId, leader,gitId );
 

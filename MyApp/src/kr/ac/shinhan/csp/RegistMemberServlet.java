@@ -32,7 +32,7 @@ public class RegistMemberServlet extends HttpServlet {
 		resp.getWriter().println("<html>");
 		resp.getWriter().println("<body><table>");
 		resp.getWriter().println("<tr><td>Name</td><td>: " + m.getName() + "</td></tr>");
-		resp.getWriter().println("<tr><td>Number</td><td>: " + m.getHakid() + "</td></tr>");
+		resp.getWriter().println("<tr><td>Number</td><td>: " + m.getHakId() + "</td></tr>");
 		resp.getWriter().println("<tr><td>Phone Number</td><td>: " + m.getPhoneNum() + "</td></tr>");
 		resp.getWriter().println("<tr><td>E-Mail</td><td>: " + m.getMail() + "</td></tr>");
 		resp.getWriter().println("<tr><td>Kakao ID</td><td>: " + m.getKkoId() + "</td></tr>");

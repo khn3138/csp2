@@ -10,12 +10,12 @@ import javax.jdo.annotations.PrimaryKey;
 public class Member {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long id;
+	private Long key;
 
 	@Persistent
 	private String name;
 	@Persistent
-	private String hakid;
+	private String hakId;
 	@Persistent
 	private String phoneNum;
 	@Persistent
@@ -27,11 +27,11 @@ public class Member {
 	@Persistent
 	private String gitId;
 
-	public Member(String name, String hakid, String phoneNum, String mail,
+	public Member(String name, String hakId, String phoneNum, String mail,
 			String kkoId, String leader, String gitId) {
 		super();
 		this.name = name;
-		this.hakid = hakid;
+		this.hakId = hakId;
 		this.phoneNum = phoneNum;
 		this.mail = mail;
 		this.kkoId = kkoId;
@@ -55,12 +55,12 @@ public class Member {
 		this.name = name;
 	}
 
-	public String getHakid() {
-		return hakid;
+	public String getHakId() {
+		return hakId;
 	}
 
-	public void setHakid(String hakid) {
-		this.hakid = hakid;
+	public void setHakId(String hakId) {
+		this.hakId = hakId;
 	}
 
 	public String getPhoneNum() {
@@ -95,13 +95,8 @@ public class Member {
 		this.gitId = gitId;
 	}
 
-	
-
-	
-
 	public Long getId() {
-		return id;
+		return key;
 	}
-	
 
 }

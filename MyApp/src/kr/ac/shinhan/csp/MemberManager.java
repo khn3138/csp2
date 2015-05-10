@@ -24,6 +24,7 @@ public class MemberManager {
 		Long lkey = Long.parseLong(key);
 		Member m = pm.getObjectById(Member.class, lkey);
 		//Member m = pm.getObjectById(Member.class, key);
+		pm.close();
 		return m;
 	}
 
@@ -36,6 +37,7 @@ public class MemberManager {
 		pm.close();
 	}
 
+	@SuppressWarnings("unchecked")
 	public static List<Member> getMemberByName(String name) {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
@@ -48,6 +50,7 @@ public class MemberManager {
 		return memberList;
 	}
 
+	@SuppressWarnings("unchecked")
 	public static List<Member> getAllMembers() {
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
@@ -60,23 +63,28 @@ public class MemberManager {
 
 	
 	
-	public static Member updateMember(Member newMember) {	//public static void updateMember(Member newMember)  
+	public static void updateMember(String key, String name, String hakId, String phoneNum, String mail, String leader, String kkoId, String gitId) {	//public static void updateMember(Member newMember)  
+
+		//Member m = pm.getObjectById(Member.class, newMember);
+		Long lkey = Long.parseLong(key);
+		
 		PersistenceManager pm = JDOHelper.getPersistenceManagerFactory(
 				"transactions-optional").getPersistenceManager();
+		Member m = pm.getObjectById(Member.class, lkey);
 		
-		Member m = pm.getObjectById(Member.class, newMember);
-		
-		m.setName(newMember.getName());
-		m.setHakid(newMember.getHakid());
-		m.setPhoneNum(newMember.getPhoneNum());
-		m.setMail(newMember.getMail());
-		m.setLeader(newMember.getLeader());
-		m.setKkoId(newMember.getKkoId());
-		m.setGitId(newMember.getGitId());
+
+
+		m.setName(name);
+		m.setHakId(hakId);
+		m.setPhoneNum(phoneNum);
+		m.setMail(mail);
+		m.setLeader(leader);
+		m.setKkoId(kkoId);
+		m.setGitId(gitId);
 
 		pm.close();
 		
-		return newMember;//return값없음
+		//return값없음
 	}
 
 }
